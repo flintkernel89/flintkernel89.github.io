@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>秘密研究所天天向上-天天向上研究所最新内容_秘密研究所热点观察</title>
+<meta name="description" content="秘密研究所天天向上主题首页，汇集研究所近期热点内容与观察记录，按栏目梳理秘密研究所天天向上的内容方向，帮助访问者快速了解并找到感兴趣的内容入口。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23161b2e'/%3E%3Ccircle cx='32' cy='28' r='12' fill='none' stroke='%23ffc94d' stroke-width='4'/%3E%3Cpath d='M32 14v-6M32 48v6M18 28h-6M52 28h-6' stroke='%23ffc94d' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M20 52h24' stroke='%236ad0c7' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#0e1220;
+    --bg-soft:#151b2e;
+    --card:#1a2138;
+    --line:rgba(255,255,255,.09);
+    --ink:#eef1f8;
+    --ink-soft:#a9b2c9;
+    --gold:#ffc94d;
+    --mint:#6ad0c7;
+    --violet:#9b8cff;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(900px 520px at 82% -8%, rgba(155,140,255,.20), transparent 62%),
+      radial-gradient(760px 460px at 4% 6%, rgba(106,208,199,.14), transparent 60%),
+      var(--bg);
+    color:var(--ink);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+    line-height:1.75;
+    font-size:16px;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{max-width:100%;}
+  .wrap{width:min(1120px,92vw);margin:0 auto;}
+
+  /* ---------- header ---------- */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(14,18,32,.86);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .bar{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:18px;padding:12px 0;flex-wrap:wrap;
+  }
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.4px;}
+  .logo .mark{width:34px;height:34px;flex:0 0 auto;}
+  .logo .brand{font-size:17px;color:#fff;}
+  nav.main{display:flex;gap:4px;flex-wrap:wrap;align-items:center;}
+  nav.main a{
+    font-size:14px;color:var(--ink-soft);padding:7px 12px;border-radius:999px;
+    transition:.2s;
+  }
+  nav.main a:hover{color:#fff;background:rgba(255,255,255,.07);}
+  nav.main a.cta{
+    color:#161b2e;background:var(--gold);font-weight:600;
+  }
+  nav.main a.cta:hover{background:#ffd977;color:#161b2e;}
+
+  /* ---------- hero ---------- */
+  .hero{padding:54px 0 26px;}
+  .hero-grid{
+    display:grid;grid-template-columns:1.15fr .85fr;gap:38px;align-items:center;
+  }
+  .tag{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;color:var(--mint);
+    border:1px solid rgba(106,208,199,.35);
+    background:rgba(106,208,199,.08);
+    padding:5px 13px;border-radius:999px;letter-spacing:.6px;
+  }
+  .tag .dot{width:7px;height:7px;border-radius:50%;background:var(--mint);}
+  h1{
+    font-size:clamp(30px,4.6vw,50px);
+    line-height:1.22;
+    margin:18px 0 16px;
+    letter-spacing:1px;
+    font-weight:800;
+    background:linear-gradient(100deg,#ffffff 20%,#ffd977 55%,#8be0d8 92%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero p.lead{
+    color:var(--ink-soft);font-size:16.5px;max-width:38em;margin:0 0 26px;
+  }
+  .actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:11px 22px;border-radius:12px;font-size:15px;font-weight:600;
+    border:1px solid transparent;transition:.2s;cursor:pointer;
+  }
+  .btn-primary{background:var(--gold);color:#161b2e;}
+  .btn-primary:hover{background:#ffd977;}
+  .btn-ghost{
+    border-color:var(--line);color:var(--ink);background:rgba(255,255,255,.04);
+  }
+  .btn-ghost:hover{background:rgba(255,255,255,.09);}
+  .btn[aria-disabled="true"]{opacity:.85;pointer-events:none;}
+
+  .hero-art{
+    background:linear-gradient(160deg,rgba(155,140,255,.16),rgba(106,208,199,.10));
+    border:1px solid var(--line);border-radius:22px;padding:22px;
+  }
+  .hero-art svg{display:block;width:100%;height:auto;}
+  .art-caption{
+    margin-top:12px;font-size:12.5px;color:var(--ink-soft);
+    display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;
+  }
+
+  /* ---------- section base ---------- */
+  section{padding:34px 0;}
+  .sec-head{
+    display:flex;align-items:flex-end;justify-content:space-between;
+    gap:16px;flex-wrap:wrap;margin-bottom:20px;
+  }
+  h2{
+    font-size:clamp(20px,2.4vw,26px);margin:0;font-weight:700;letter-spacing:.5px;
+  }
+  h2 .accent{color:var(--gold);}
+  .sec-head p{margin:0;font-size:14px;color:var(--ink-soft);max-width:34em;}
+
+  /* ---------- topic cards ---------- */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px;display:flex;flex-direction:column;gap:9px;transition:.22s;
+  }
+  .card:hover{transform:translateY(-3px);border-color:rgba(255,201,77,.4);}
+  .card .ico{
+    width:38px;height:38px;border-radius:10px;display:grid;place-items:center;
+    background:rgba(255,201,77,.12);margin-bottom:2px;
+  }
+  .card h3{margin:0;font-size:16.5px;font-weight:700;}
+  .card p{margin:0;font-size:14px;color:var(--ink-soft);line-height:1.72;}
+  .card .meta{font-size:12.5px;color:#7d87a1;margin-top:auto;padding-top:6px;}
+
+  /* ---------- split / reading ---------- */
+  .split{display:grid;grid-template-columns:1.6fr 1fr;gap:22px;align-items:start;}
+  .article-box{
+    background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px;
+  }
+  .article-box h3{margin:0 0 12px;font-size:18.5px;}
+  .article-box p{margin:0 0 14px;font-size:15px;color:#cdd4e6;}
+  .article-box p:last-child{margin-bottom:0;}
+  .aside-box{
+    background:linear-gradient(180deg,rgba(155,140,255,.14),rgba(26,33,56,.6));
+    border:1px solid var(--line);border-radius:var(--radius);padding:22px;
+  }
+  .aside-box h3{margin:0 0 12px;font-size:16px;}
+  .aside-box ul{margin:0;padding-left:0;list-style:none;display:grid;gap:11px;}
+  .aside-box li{font-size:14px;color:#c3cbdf;display:flex;gap:9px;line-height:1.65;}
+  .aside-box li .n{
+    flex:0 0 auto;width:20px;height:20px;border-radius:6px;font-size:12px;
+    display:grid;place-items:center;background:rgba(106,208,199,.18);color:var(--mint);
+    margin-top:2px;
+  }
+
+  /* ---------- list rows ---------- */
+  .rows{display:grid;gap:12px;}
+  .row{
+    display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:15px 18px;transition:.2s;
+  }
+  .row:hover{border-color:rgba(106,208,199,.4);background:#1e2740;}
+  .row .date{font-size:13px;color:#7d87a1;font-variant-numeric:tabular-nums;white-space:nowrap;}
+  .row .txt strong{display:block;font-size:15.5px;margin-bottom:3px;}
+  .row .txt span{font-size:13.5px;color:var(--ink-soft);}
+  .row .go{font-size:13px;color:var(--gold);white-space:nowrap;}
+
+  /* ---------- filter ---------- */
+  .filter{
+    display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:18px;
+  }
+  .filter input[type="search"]{
+    flex:1 1 240px;min-width:0;background:#10162a;border:1px solid var(--line);
+    border-radius:11px;padding:11px 14px;color:var(--ink);font-size:14.5px;
+    font-family:inherit;outline:none;
+  }
+  .filter input[type="search"]:focus{border-color:rgba(255,201,77,.55);}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;}
+  .chip{
+    font-size:13.5px;padding:8px 15px;border-radius:999px;cursor:pointer;
+    border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--ink-soft);
+    font-family:inherit;transition:.18s;
+  }
+  .chip:hover{color:#fff;}
+  .chip.active{background:var(--gold);color:#161b2e;border-color:var(--gold);font-weight:600;}
+  .empty{
+    display:none;padding:22px;text-align:center;color:var(--ink-soft);font-size:14px;
+    border:1px dashed var(--line);border-radius:14px;
+  }
+
+  /* ---------- download ---------- */
+  .download{
+    display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center;
+    background:linear-gradient(120deg,rgba(255,201,77,.14),rgba(106,208,199,.10));
+    border:1px solid rgba(255,201,77,.28);border-radius:20px;padding:26px 28px;
+  }
+  .download h3{margin:0 0 8px;font-size:19px;}
+  .download p{margin:0;font-size:14.5px;color:#cfd6e8;max-width:44em;}
+  .download .btn{white-space:nowrap;}
+
+  /* ---------- footer ---------- */
+  footer.site{
+    margin-top:26px;border-top:1px solid var(--line);
+    background:rgba(10,14,25,.7);padding:30px 0 26px;
+  }
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:26px;}
+  .foot-brand{display:flex;gap:10px;align-items:center;font-weight:700;margin-bottom:10px;}
+  .foot-brand .mark{width:28px;height:28px;}
+  footer p{margin:0;font-size:13.5px;color:#8b95ad;line-height:1.8;}
+  footer h4{margin:0 0 10px;font-size:14px;color:#dfe4f1;font-weight:600;}
+  footer ul{margin:0;padding:0;list-style:none;display:grid;gap:7px;}
+  footer ul a{font-size:13.5px;color:#8b95ad;}
+  footer ul a:hover{color:var(--gold);}
+  .copy{
+    margin-top:24px;padding-top:16px;border-top:1px solid var(--line);
+    font-size:12.5px;color:#6f7890;display:flex;justify-content:space-between;
+    gap:12px;flex-wrap:wrap;
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width:920px){
+    .hero-grid{grid-template-columns:1fr;gap:26px;}
+    .hero-art{order:2;}
+    .split{grid-template-columns:1fr;}
+    .cards{grid-template-columns:1fr 1fr;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:640px){
+    body{font-size:15.5px;}
+    .bar{padding:10px 0;}
+    nav.main{gap:2px;}
+    nav.main a{font-size:13px;padding:6px 9px;}
+    .hero{padding:34px 0 16px;}
+    h1{letter-spacing:.5px;}
+    .cards{grid-template-columns:1fr;}
+    .article-box,.aside-box,.download{padding:18px;}
+    .download{grid-template-columns:1fr;}
+    .row{grid-template-columns:1fr;gap:6px;padding:14px 16px;}
+    .row .go{display:none;}
+    .foot-grid{grid-template-columns:1fr;}
+    section{padding:26px 0;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap bar">
+    <div class="logo">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#1a2138"/>
+        <circle cx="32" cy="27" r="12" fill="none" stroke="#ffc94d" stroke-width="4"/>
+        <path d="M32 13v-6M32 47v6M18 27h-6M52 27h-6" stroke="#ffc94d" stroke-width="4" stroke-linecap="round"/>
+        <path d="M20 52h24" stroke="#6ad0c7" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+      <span class="brand">秘密研究所天天向上</span>
+    </div>
+    <nav class="main" aria-label="主导航">
+      <a href="#topics">内容方向</a>
+      <a href="#reads">观察记录</a>
+      <a href="#feed">最新内容</a>
+      <a href="#download">资料下载</a>
+      <a href="#feed" class="cta">进入内容</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="tag"><span class="dot"></span>主题首页 · 内容入口</span>
+        <h1>秘密研究所天天向上</h1>
+        <p class="lead">秘密研究所天天向上是一个围绕研究所热点内容展开的主题站点，把近期观察、内容方向和可下载资料集中在一处。访问者可以先看方向分区，再按标签筛选最新内容，逐步进入自己关心的部分。</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#feed">查看最新内容</a>
+          <a class="btn btn-ghost" href="#topics">先从内容方向看起</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <svg viewBox="0 0 420 300" role="img" aria-label="秘密研究所主题插画：实验室观测台与信号波纹">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ffc94d" stop-opacity=".9"/>
+              <stop offset="1" stop-color="#6ad0c7" stop-opacity=".9"/>
+            </linearGradient>
+          </defs>
+          <rect x="24" y="40" width="372" height="220" rx="18" fill="#121829" stroke="rgba(255,255,255,.10)"/>
+          <circle cx="210" cy="132" r="52" fill="none" stroke="url(#g1)" stroke-width="3"/>
+          <circle cx="210" cy="132" r="34" fill="none" stroke="#ffc94d" stroke-width="2" stroke-opacity=".55"/>
+          <circle cx="210" cy="132" r="14" fill="#ffc94d" fill-opacity=".9"/>
+          <path d="M210 60v-14M210 218v-14M138 132h-14M296 132h-14" stroke="#6ad0c7" stroke-width="3" stroke-linecap="round"/>
+          <path d="M60 210h60M60 224h34M300 210h60M326 224h34" stroke="rgba(255,255,255,.22)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M118 90l24 24M302 90l-24 24" stroke="#9b8cff" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <div class="art-caption">
+          <span>观测 · 记录 · 归档</span>
+          <span>内容按标签归集</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="topics">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>内容<span class="accent">方向</span></h2>
+        <p>把秘密研究所天天向上的内容拆成三条主线，每条主线对应一类阅读需求。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffc94d" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="M15.5 15.5L20 20"/></svg>
+          </div>
+          <h3>热点观察</h3>
+          <p>围绕研究所近期讨论度较高的内容做归纳，把零散的说法按时间与来源分类，便于对照阅读。</p>
+          <div class="meta">适合：想快速了解整体走向的访问者</div>
+        </article>
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6ad0c7" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h10M4 18h13"/></svg>
+          </div>
+          <h3>内容梳理</h3>
+          <p>将同一主题下的条目按线索串联，标注出处与适用范围，阅读时更容易判断哪些内容可以直接引用。</p>
+          <div class="meta">适合：需要追溯来龙去脉的访问者</div>
+        </article>
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9b8cff" stroke-width="2" stroke-linecap="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 19h16"/></svg>
+          </div>
+          <h3>资料归档</h3>
+          <p>把可下载的资料单独列出，按用途分组，方便离线保存。归档条目会随内容更新逐步补充。</p>
+          <div class="meta">适合：需要保存素材的访问者</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="reads">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>观察<span class="accent">记录</span></h2>
+        <p>用连续阅读的方式呈现秘密研究所天天向上的内容脉络。</p>
+      </div>
+      <div class="split">
+        <div class="article-box">
+          <h3>为什么同一主题会出现多种说法</h3>
+          <p>秘密研究所天天向上的内容大多来自不同渠道的转述，转述过程中容易丢失上下文。同一件事在传播初期往往只有片段，等到更多补充出现，原本的结论才可能被修正。因此在本站阅读时，建议先看条目的发布时间，再看它引用了什么。</p>
+          <p>我们把内容分成“原始描述”和“后续补充”两层。原始描述保留最初的表达，后续补充则记录新增的细节或相反的说法。两层并列呈现，读者可以自己判断信息在哪个阶段更完整。</p>
+          <p>另一件需要留意的事是标题与正文的差距。部分条目标题概括得很满，正文却只覆盖一小部分。遇到这种情况，本站会在条目备注中写明正文实际涉及的范围，避免读者按标题的预期去理解内容。</p>
+        </div>
+        <aside class="aside-box">
+          <h3>阅读建议</h3>
+          <ul>
+            <li><span class="n">1</span>先确认条目时间，再看内容本身。</li>
+            <li><span class="n">2</span>同一主题的多条内容放在一起比对。</li>
+            <li><span class="n">3</span>标题与正文范围不一致时，以正文为准。</li>
+            <li><span class="n">4</span>需要保存的内容优先走下载归档。</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="feed">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>最新<span class="accent">内容</span></h2>
+        <p>按标签筛选或直接搜索标题，结果即时显示。</p>
+      </div>
+
+      <div class="filter">
+        <input type="search" id="q" placeholder="搜索标题或关键词，例如：归档、观察" aria-label="搜索内容">
+        <div class="chips" role="group" aria-label="标签筛选">
+          <button class="chip active" type="button" data-tag="all">全部</button>
+          <button class="chip" type="button" data-tag="观察">观察</button>
+          <button class="chip" type="button" data-tag="梳理">梳理</button>
+          <button class="chip" type="button" data-tag="归档">归档</button>
+        </div>
+      </div>
+
+      <div class="rows" id="list">
+        <a class="row" href="#reads" data-tag="观察">
+          <span class="date">08-12</span>
+          <span class="txt"><strong>本周热点条目汇总</strong><span>把分散的说法按主题归并，标注每条内容的出现时间。</span></span>
+          <span class="go">阅读 →</span>
+        </a>
+        <a class="row" href="#reads" data-tag="梳理">
+          <span class="date">08-09</span>
+          <span class="txt"><strong>同一线索的三种转述</strong><span>对照三个来源的表述差异，说明差异可能产生的位置。</span></span>
+          <span class="go">阅读 →</span>
+        </a>
+        <a class="row" href="#download" data-tag="归档">
+          <span class="date">08-05</span>
+          <span class="txt"><strong>归档资料入口开放</strong><span>按用途分组的资料清单，支持离线保存与后续补充。</span></span>
+          <span class="go">查看 →</span>
+        </a>
+        <a class="row" href="#topics" data-tag="观察">
+          <span class="date">07-30</span>
+          <span class="txt"><strong>内容方向说明更新</strong><span>三条主线的划分依据与各自适合的阅读场景。</span></span>
+          <span class="go">阅读 →</span>
+        </a>
+        <a class="row" href="#reads" data-tag="梳理">
+          <span class="date">07-26</span>
+          <span class="txt"><strong>标题与正文的范围差</strong><span>举例说明如何判断一条内容实际覆盖了多少信息。</span></span>
+          <span class="go">阅读 →</span>
+        </a>
+      </div>
+      <div class="empty" id="empty">没有匹配的条目，换个关键词或切回“全部”试试。</div>
+    </div>
+  </section>
+
+  <section id="download">
+    <div class="wrap">
+      <div class="download">
+        <div>
+          <h3>资料归档下载</h3>
+          <p>秘密研究所天天向上的归档资料按用途分组打包，包含内容清单与条目备注。下载入口开放后可直接保存，后续补充会同步更新清单。</p>
+        </div>
+        <a class="btn btn-primary" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#1a2138"/>
+            <circle cx="32" cy="27" r="12" fill="none" stroke="#ffc94d" stroke-width="4"/>
+            <path d="M32 13v-6M32 47v6M18 27h-6M52 27h-6" stroke="#ffc94d" stroke-width="4" stroke-linecap="round"/>
+            <path d="M20 52h24" stroke="#6ad0c7" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+          <span>秘密研究所天天向上</span>
+        </div>
+        <p>围绕秘密研究所天天向上的内容方向、观察记录与资料归档展开的主题首页，所有条目按标签归集，便于按需查找。</p>
+      </div>
+      <div>
+        <h4>站内导航</h4>
+        <ul>
+          <li><a href="#topics">内容方向</a></li>
+          <li><a href="#reads">观察记录</a></li>
+          <li><a href="#feed">最新内容</a></li>
+          <li><a href="#download">资料下载</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>内容标签</h4>
+        <ul>
+          <li><a href="#feed">观察</a></li>
+          <li><a href="#feed">梳理</a></li>
+          <li><a href="#feed">归档</a></li>
+          <li><a href="#top">回到顶部</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      <span>秘密研究所天天向上 · 主题首页</span>
+      <span>内容以实际条目为准，归档资料持续补充</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var q = document.getElementById('q');
+  var list = document.getElementById('list');
+  var empty = document.getElementById('empty');
+  var rows = Array.prototype.slice.call(list.querySelectorAll('.row'));
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  var activeTag = 'all';
+
+  function apply(){
+    var kw = (q.value || '').trim().toLowerCase();
+    var shown = 0;
+    rows.forEach(function(row){
+      var tag = row.getAttribute('data-tag') || '';
+      var text = row.textContent.toLowerCase();
+      var okTag = activeTag === 'all' || tag === activeTag;
+      var okKw = kw === '' || text.indexOf(kw) !== -1;
+      var ok = okTag && okKw;
+      row.style.display = ok ? '' : 'none';
+      if(ok) shown++;
+    });
+    empty.style.display = shown === 0 ? 'block' : 'none';
+  }
+
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      chips.forEach(function(c){ c.classList.remove('active'); });
+      chip.classList.add('active');
+      activeTag = chip.getAttribute('data-tag');
+      apply();
+    });
+  });
+
+  q.addEventListener('input', apply);
+})();
+</script>
+</body>
+</html>
